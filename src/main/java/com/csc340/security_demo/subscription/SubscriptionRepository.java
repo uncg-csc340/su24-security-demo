@@ -15,4 +15,7 @@ public interface SubscriptionRepository extends JpaRepository<Subscription, Long
     @Query(value = "select s.id, p.name , p.type, p.price, s.product_id, s.quantity " +
             "from subscriptions s, products p, users u where s.customer_id=u.id and s.product_id=p.id and u.id=?1;", nativeQuery = true)
     public List<Object> getSubscriptionsByUser(long userId);
+	
+	@Query(value = "select * from subscriptions s where s.product_id =?1", nativeQuery = true)
+    public List<Subscription> getSubscriptionsByProduct(long productId);
 }

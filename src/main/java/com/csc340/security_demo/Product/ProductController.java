@@ -90,6 +90,17 @@ public class ProductController {
         productService.deleteProduct(productId);
         return "redirect:/product/all";
     }
+	
+	@GetMapping("/VENDOR/product/delete-eager/id={productId}")
+    public String deleteProductEager(@PathVariable long productId, Model model) {
+		List<Subscription> subscriptions = subscriptionService.getSubscriptionsByProduct(productId);
+
+		for (Subscription subscription : subscriptions) {
+            subscriptionService.deleteSubscriptionById(subscription.getProductId());
+        }
+        productService.deleteProduct(productId);
+        return "redirect:/product/all";
+    }
 
     @PostMapping("/VENDOR/product/create")
     public String createProduct(Product product) {

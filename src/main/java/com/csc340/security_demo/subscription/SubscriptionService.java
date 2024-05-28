@@ -18,8 +18,16 @@ public class SubscriptionService {
     public  List<Object> getSubscriptionsByUser (long userId){
         return repo.getSubscriptionsByUser(userId);
     }
+	
+	public List<Subscription> getSubscriptionsByProduct(long productId) {
+        return repo.getSubscriptionsByProduct(productId);
+    }
 
     public void addSubscription(Subscription subscription) {
         repo.save(subscription);
+    }
+	
+	  public void deleteSubscriptionById(long subscriptionId) {
+        repo.deleteById(subscriptionId);
     }
 }

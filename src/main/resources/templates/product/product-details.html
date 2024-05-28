@@ -30,6 +30,8 @@
                class="btn btn-primary">Edit</a>
             <a th:if="${editProduct}" th:href="@{/VENDOR/product/delete/id={id}(id=${product.id})}"
                class="btn btn-primary">Delete</a>
+			<a th:if="${editProduct}" th:href="@{/VENDOR/product/delete-eager/id={id}(id=${product.id})}"
+               class="btn btn-primary">Delete Eager</a>
         </div>
     </div>
     <br>
