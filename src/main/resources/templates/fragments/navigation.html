@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav id="global-nav" class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" th:href="@{/home}">Home</a>
+    <a class="navbar-brand" th:href="@{/product/all}">All Products</a>
+    <a class="navbar-brand" th:href="@{/ADMIN/user/all}">All Users</a>
+    <a class="navbar-brand" th:href="@{/USER/product/subscriptions}" th:text="${#authentication.name} +'\'s Subscriptions'"></a>
+    <form class="form-inline" th:action="@{/logout}" method="post">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Out</button>
+    </form>
+</nav>
+</body>
+</html>
