@@ -14,10 +14,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT p FROM Product p WHERE CONCAT(p.name, p.type) LIKE %?1%")
     public List<Product> search(String keyword);
 
-    @Query(value = "select p.* from subscriptions s, products p, users u where s.customer_id=u.id" +
-            " and s.product_id=p.id and u.id=?1", nativeQuery = true)
-    public List<Product> getSubscriptionsByUser(long userId);
-
-
 }
 

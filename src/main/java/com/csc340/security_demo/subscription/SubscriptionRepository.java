@@ -1,6 +1,5 @@
 package com.csc340.security_demo.subscription;
 
-import com.csc340.security_demo.Product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -8,8 +8,8 @@
 <nav id="global-nav" class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand" th:href="@{/home}">Home</a>
     <a class="navbar-brand" th:href="@{/product/all}">All Products</a>
-    <a class="navbar-brand" th:href="@{/ADMIN/user/all}">All Users</a>
     <a class="navbar-brand" th:href="@{/USER/product/subscriptions}" th:text="${#authentication.name} +'\'s Subscriptions'"></a>
+    <a class="navbar-brand" th:href="@{/ADMIN/user/all}">All Users</a>
     <form class="form-inline" th:action="@{/logout}" method="post">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Out</button>
     </form>

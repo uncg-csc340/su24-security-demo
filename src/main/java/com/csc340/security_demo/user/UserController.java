@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/ADMIN/user/delete/id={id}")
-    public String deleteUser(@PathVariable long id, Model model) {
+    public String deleteUserLazy(@PathVariable long id, Model model) {
         service.deleteUser(id);
         return "redirect:/ADMIN/user/all";
     }
