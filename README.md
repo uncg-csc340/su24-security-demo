@@ -2,6 +2,7 @@
 ## Notes:
 - This repository includes a dependency to [Spring Security](https://github.com/uncg-csc340/su24-security-demo/blob/99ea8509548ec301344de059922c0a16299800a1/pom.xml#L24). This is how it handles authentication and authorization.
      - When you start at Spring Initializr and add a dependency to Spring Security, this will also add a ThymeLeaf dependency for Security as well.
+     - The rest of the dependencies should already look familiar: Spring Web, ThymeLeaf, JPA, MySQL. We also added a dependency to Lombok, to help with boilerplate code such as getters, setters, and constructors.
 - Once this dependency is included, Security must be configured. The following are the elements needed for that:
      -   A User service class [CustomUserDetailsService](https://github.com/uncg-csc340/su24-security-demo/blob/90407bf5a2ec636e219127bbd939214f0eaf8de9/src/main/java/com/csc340/security_demo/security/CustomUserDetailsService.java)
          - It implements UserDetailsService. This will make it possible to use the connection to the database to access our saved users using their usernames and passwords. In the User repo, we implement a method for finding a user by username.
