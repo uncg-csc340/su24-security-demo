@@ -32,6 +32,7 @@ public class SecurityConfig {
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
+                        .successHandler(new CustomAuthenticationSuccessHandler())
                         .permitAll()
                 ).exceptionHandling((x) -> x.accessDeniedPage("/403"))
                 .logout((logout) -> logout.permitAll())
